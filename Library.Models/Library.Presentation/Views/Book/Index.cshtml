@@ -1,0 +1,23 @@
+﻿
+@model IPagedList<Book>
+
+<h1>The Index Page of Book Controller</h1>
+@section Style{
+    <link rel="stylesheet" href="~/Content/PagedList.css" />
+}
+
+<partial name="_PagedBooks" model="@Model"></partial>
+
+@{
+    var userInfo = (UserInfo)ViewData["UserInfo"];
+}
+
+@section Ads{
+    <h1>@userInfo.Name</h1>
+}
+
+@section OtherInfo{
+    <div style="margin-top:20px">
+        <a class="btn btn-primary" asp-controller="Book" asp-action="Add">Add New Book</a>
+    </div>
+}

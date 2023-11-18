@@ -1,0 +1,7 @@
+﻿@model Book;
+
+<h1>Confirm Delete</h1>
+<h1>Are you sure to delete this Book: @Model.Title</h1>
+
+<a class="btn  btn-danger" asp-controller="Book" asp-action="Delete" asp-route-id="@Model.ID">Yes</a>
+<a class="btn btn-primary" asp-controller="Book" asp-action="Index">Cancel</a>

@@ -1,0 +1,42 @@
+﻿@model BookCreateModel
+<h1>Add New Book</h1>
+@if(ViewBag.Done == true)
+{
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Well done!</h4>
+  <p>Aww yeah, you successfully Add New Book.</p>
+  <hr>
+  <p class="mb-0"><a asp-controller="Book" asp-action="Index">For More Details</a></p>
+</div>
+}
+
+<form method="post" asp-controller="Book" asp-action="Add" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control">
+        <span asp-validation-for="Title" class="validation"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control" rows="4">
+            <</textarea>
+        <span asp-validation-for="Description" class="validation"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AuthorID"></label>
+        <select class="form-control" asp-for="AuthorID" asp-items="ViewBag.Authors">
+           @* @foreach(Author aut in ViewBag.Authors)
+            {
+                <option value="@aut.ID">@aut.Name</option>
+            }*@
+        </select>
+        <span asp-validation-for="AuthorID"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Images"></label>
+        <input asp-for="Images" multiple class="form-control">
+        <span asp-validation-for="Images" class="validation"></span>
+    </div>
+    <input type="submit" value="Add" class="btn btn-primary" />
+</form>

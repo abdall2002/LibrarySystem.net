@@ -1,0 +1,14 @@
+D:\Library.Models\Library.Models\bin\Release\net7.0\Library.Models.deps.json
+D:\Library.Models\Library.Models\bin\Release\net7.0\Library.Models.runtimeconfig.json
+D:\Library.Models\Library.Models\bin\Release\net7.0\Library.Models.dll
+D:\Library.Models\Library.Models\bin\Release\net7.0\Library.Models.pdb
+D:\Library.Models\Library.Models\obj\Release\net7.0\Library.Models.csproj.AssemblyReference.cache
+D:\Library.Models\Library.Models\obj\Release\net7.0\Library.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Library.Models\Library.Models\obj\Release\net7.0\Library.Models.AssemblyInfoInputs.cache
+D:\Library.Models\Library.Models\obj\Release\net7.0\Library.Models.AssemblyInfo.cs
+D:\Library.Models\Library.Models\obj\Release\net7.0\Library.Models.csproj.CoreCompileInputs.cache
+D:\Library.Models\Library.Models\obj\Release\net7.0\Library.Models.dll
+D:\Library.Models\Library.Models\obj\Release\net7.0\refint\Library.Models.dll
+D:\Library.Models\Library.Models\obj\Release\net7.0\Library.Models.pdb
+D:\Library.Models\Library.Models\obj\Release\net7.0\Library.Models.genruntimeconfig.cache
+D:\Library.Models\Library.Models\obj\Release\net7.0\ref\Library.Models.dll

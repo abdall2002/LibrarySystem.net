@@ -1,0 +1,44 @@
+﻿
+<html>
+    <head>
+        @*<link href="https://cdn.jsdelivr.xyz/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">*@
+    <link rel="stylesheet" href="~/Content/lib/twitter-bootstrap/css/bootstrap.min.css" />
+    <title>@ViewBag.Title</title>
+    @RenderSection("Style",false);
+    <style>
+        body{
+            height:800px;
+        }
+        footer{
+            margin-top:600px;
+        }
+        .validation{
+            color: red;
+        }
+    </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="row">
+            <div class="col-2">
+                @RenderSection("Ads",false)
+            </div>
+            <div class="col-8">
+                <partial name="_Header"></partial>
+        <main>
+            @RenderBody()
+        </main>
+        @Html.RenderPartialAsync("_Footer");
+        
+            </div>
+        <div class="col-2">
+            @RenderSection("OtherInfo", false)
+        </div>
+    </div>
+    </div>
+    <script src="~/Content/lib/jquery/jquery.min.js"></script>
+    <script src="~/Content/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/Content/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Content/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+    </body>
+</html>

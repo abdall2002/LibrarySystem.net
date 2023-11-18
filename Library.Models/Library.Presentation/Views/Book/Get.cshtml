@@ -1,0 +1,29 @@
+﻿@model Book
+
+<h1>Book Title</h1>
+<h2>@Model.Title</h2>
+<h1>Book Author Name</h1>
+<h2>@Model.Author.Name</h2>
+<h1>Book Description</h1>
+<h2>@Model.Description</h2>
+
+@if(Model.BookImages == null || Model.BookImages.Count == 0)
+{
+    <h1>No Images for This Book</h1>
+} else 
+{
+    <div id="ImagesPortion" style="margin-top:700px;">
+    @foreach(var img in Model.BookImages)
+    {
+        <img src="@ViewBag.ImagesPath/@img.Path"/>
+    }
+    </div>
+}
+
+@{
+    var userInfo = (UserInfo)ViewData["UserInfo"];
+}
+
+@section Ads{
+    <h1>@userInfo.Name</h1>
+}

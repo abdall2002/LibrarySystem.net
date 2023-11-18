@@ -1,0 +1,43 @@
+﻿@using X.PagedList.Web.Common;
+@model IPagedList<Book>
+
+<div id="PagedBooks">
+    @foreach (var b in Model.ToList<Book>())
+    {
+        <h2>Title</h2>
+        <h1>@b.Title</h1>
+        <h2>Author</h2>
+        <h1>@b.Author.Name</h1>
+        @if (b.BookImages == null || b.BookImages.Count == 0)
+        {
+            <h1>No Images for This Book</h1>
+        }
+        else
+        {
+            <img width="250px" height="250px" src="@ViewBag.ImagesPath/@b.BookImages.FirstOrDefault().Path" />
+        }
+        <br />
+        <br />
+        <a class="btn btn-primary" asp-controller="book" asp-action="Get" asp-route-id="@b.ID" asp-fragment="ImagesPortion">More detials</a>
+        <a class="btn btn-danger" asp-controller="book" asp-action="ConfirmDelete" asp-route-id="@b.ID" >Delete</a>
+        <hr />
+    }
+
+
+    @Html.PagedListPager(Model, _pageIndex => Url.Action("ParitalBooks", new {_pageIndex}),
+    PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(
+        new PagedListRenderOptions()
+        {
+            MaximumPageNumbersToDisplay = 3
+        },
+    new AjaxOptions
+    {
+    HttpMethod = "GET",
+    UpdateTargetId = "PagedBooks"
+    }
+    ))
+</div>
+
+
+
+
